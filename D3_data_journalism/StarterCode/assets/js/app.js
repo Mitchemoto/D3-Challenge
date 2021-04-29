@@ -135,9 +135,9 @@ d3.csv("assets/data/data.csv").then(function(censusData, err) {
     data.poverty = +data.poverty;
     data.age = +data.age;
     data.income = +data.income;
+    data.healthcare = +data.healthcare;
     data.obesity = +data.obesity;
     data.smokes = +data.smokes;
-    data.healthcare = +data.healthcare;
   });
 
 //   // xLinearScale function above csv import
@@ -168,7 +168,7 @@ d3.csv("assets/data/data.csv").then(function(censusData, err) {
     .enter()
     .append("circle")
     .attr("cx", d => xLinearScale(d[chosenXAxis]))
-    .attr("cy", d => yLinearScale(d.smokes))
+    .attr("cy", d => yLinearScale(d.healthcare))
     .attr("r", 20)
     .attr("fill", "lime")
     .attr("opacity", ".5");
@@ -184,7 +184,7 @@ d3.csv("assets/data/data.csv").then(function(censusData, err) {
 					return xLinearScale(d[chosenXAxis])
 				})
 				.attr('y', function (d){
-					return yLinearScale(d.smokes)
+					return yLinearScale(d.healthcare)
 				})
 				.text(function (d){
 					return d.abbr;
@@ -210,12 +210,12 @@ d3.csv("assets/data/data.csv").then(function(censusData, err) {
     .classed("inactive", true)
     .text("Median Age");
 
-  var healthcareLabel = labelsGroup.append("text")
+  var incomeLabel = labelsGroup.append("text")
     .attr("x", 0)
-    .attr("y", 40)
+    .attr("y", 60)
     .attr("value", "healthcare") // value to grab for event listener
     .classed("inactive", true)
-    .text("Uncovered Healthcare %");
+    .text("Median Income");
 
 
   // append y axis
@@ -225,7 +225,7 @@ d3.csv("assets/data/data.csv").then(function(censusData, err) {
     .attr("x", 0 - (height / 2))
     .attr("dy", "1em")
     .classed("axis-text", true)
-    .text("% of Smokers");
+    .text("Uncovered Healthcare");
 
 //   // updateToolTip function above csv import
   var circlesGroup = updateToolTip(chosenXAxis, circlesGroup);
@@ -267,7 +267,7 @@ d3.csv("assets/data/data.csv").then(function(censusData, err) {
           ageLabel
             .classed("active", false)
             .classed("inactive", true);
-          healthcareLabel
+          incomeLabel
             .classed("active", false)
             .classed("inactive", true);
         }
@@ -278,7 +278,7 @@ d3.csv("assets/data/data.csv").then(function(censusData, err) {
           ageLabel
             .classed("active", true)
             .classed("inactive", false);
-          healthcareLabel
+          incomeLabel
             .classed("active", false)
             .classed("inactive", true);
         }
@@ -289,7 +289,7 @@ d3.csv("assets/data/data.csv").then(function(censusData, err) {
           ageLabel
             .classed("active", false)
             .classed("inactive", true);
-          healthcareLabel
+          incomeLabel
             .classed("active", true)
             .classed("inactive", false);
         }
