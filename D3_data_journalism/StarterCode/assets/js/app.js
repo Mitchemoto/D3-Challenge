@@ -253,10 +253,10 @@ d3.csv("assets/data/data.csv").then(function(censusData, err) {
         circlesGroup = renderCircles(circlesGroup, xLinearScale, chosenXAxis);
 
         //state abbr
-        stateAbbr=renderText(stateAbbr, xLinearScale, chosenXAxis);
+        stateAbbr=renderText(stateAbbr,xLinearScale, chosenXAxis);
 
         // updates tooltips with new info
-        circlesGroup = updateToolTip(stateAbbr, chosenXAxis, circlesGroup);
+        circlesGroup = updateToolTip(stateAbbr, circlesGroup);
 
 
         // changes classes to change bold text
