@@ -201,7 +201,7 @@ d3.csv("assets/data/data.csv").then(function(censusData, err) {
     .attr("y", 20)
     .attr("value", "poverty") // value to grab for event listener
     .classed("active", true)
-    .text("Poverty");
+    .text("% in Poverty");
 
   var ageLabel = labelsGroup.append("text")
     .attr("x", 0)
@@ -213,7 +213,7 @@ d3.csv("assets/data/data.csv").then(function(censusData, err) {
   var incomeLabel = labelsGroup.append("text")
     .attr("x", 0)
     .attr("y", 60)
-    .attr("value", "healthcare") // value to grab for event listener
+    .attr("value", "income") // value to grab for event listener
     .classed("inactive", true)
     .text("Median Income");
 
