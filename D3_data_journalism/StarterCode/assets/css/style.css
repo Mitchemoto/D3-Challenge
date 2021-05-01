@@ -35,17 +35,17 @@ h1{
 }
 
 .tooltip {
-  position: relative;
+  position: absolute;
   left:30px;
-  width: 160px;
-  height: 80px;
+  width: 135px;
+  height: 60px;
   padding: 2px;
   padding-top: 8px;
-  font: 20px sans-serif;
+  font: 16px sans-serif;
   color: white;
   text-align: center;
-  background: #0066ff;
-  border: 0;
-  border-radius: 3px;
-  border-color: #33ccff; 
+  background: #33ccff;
+  border: 3px;
+  border-radius: 15px;
+  border-color: #0000ff; 
 }
